@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">716795723412-oqe5qk7po5l94ms6odch5l0sn9rhd0lb.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://portablepc-c20f0.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">716795723412</string>
+    <string name="google_api_key" translatable="false">AIzaSyBX5MTAKCFk2ujlr7DjFvn68p6abIp3O4I</string>
+    <string name="google_app_id" translatable="false">1:716795723412:android:02cdc6f3fd864c4c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBX5MTAKCFk2ujlr7DjFvn68p6abIp3O4I</string>
+    <string name="google_storage_bucket" translatable="false">portablepc-c20f0.appspot.com</string>
+</resources>
