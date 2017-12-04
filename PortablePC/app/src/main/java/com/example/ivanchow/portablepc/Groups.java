@@ -38,7 +38,7 @@ public class Groups extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guidance_pop_up);
+        setContentView(R.layout.activity_groups);
 
         setTitle("");
 
