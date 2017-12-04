@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
                 //Toast.makeText(getApplicationContext(), dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
                 Month = month;
                 Day = dayOfMonth;
-                Intent toy = new Intent(MainActivity.this, GuidancePopUp.class);
+                Intent toy = new Intent(MainActivity.this, Groups.class);
                 startActivity(toy);
             }
         });
@@ -109,17 +109,21 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Intent go = new Intent(MainActivity.this, newReel.class);
+        if (id == R.id.nav_mygroup) {
+            Intent go = new Intent(MainActivity.this, MyGroups.class);
             startActivity(go);
         }
-        else if (id == R.id.nav_gallery) {
+        else if (id == R.id.nav_group||id == R.id.nav_settings||id == R.id.nav_logout) {
 
         }
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
     public static int getMonth(){
         return Month;

@@ -11,7 +11,7 @@ import android.support.v4.view.ViewPager;
 
 
 
-public class newReel extends FragmentActivity {
+public class MyGroups extends FragmentActivity {
 
 
     @Override
