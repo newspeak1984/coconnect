@@ -49,9 +49,6 @@ public class Booking extends AppCompatActivity {
 
         month = (TextView)findViewById(R.id.month);
 
-        monthnum = MainActivity.getMonth();
-        daynum = MainActivity.getDay();
-
         month.setText(monthnum+"/"+daynum);
 
         back = (ImageButton)findViewById(R.id.back);
