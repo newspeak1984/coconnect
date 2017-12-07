@@ -19,10 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GuidancePopUp" />
+        <activity android:name=".Groups" />
         <activity android:name=".Booking" />
         <activity android:name=".Submit" />
-        <activity android:name=".newReel" ></activity>
+        <activity android:name=".MyGroups" ></activity>
         <activity android:name=".StoryPage"></activity>
     </application>
 
