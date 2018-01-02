@@ -11,13 +11,13 @@ import android.support.v4.view.ViewPager;
 
 
 
-public class newReel extends FragmentActivity {
+public class MyGroups extends FragmentActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_reel);
+        setContentView(R.layout.activity_my_groups);
 
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));

@@ -21,10 +21,12 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="218dp"
+                android:layout_width="350dp"
                 android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logonect" />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
@@ -33,27 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="60dp"
-            android:text="GUIDANCE"
-            android:textColor="@android:color/black"
-            android:textSize="70sp"
-            android:textStyle="bold" />
-
-        <CalendarView
-            android:id="@+id/calendar"
-            android:layout_width="match_parent"
-            android:layout_height="325dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView2"
-            android:layout_marginTop="16dp"
-            android:visibility="visible"></CalendarView>
     </RelativeLayout>
 
 
