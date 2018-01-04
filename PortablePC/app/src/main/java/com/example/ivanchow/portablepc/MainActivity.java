@@ -13,8 +13,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -31,13 +33,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    CalendarView calendar;
-    private static int Month;
-    private static int Day;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,16 +59,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        calendar = (CalendarView)findViewById(R.id.calendar);
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth){
-                //Toast.makeText(getApplicationContext(), dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
-                Month = month;
-                Day = dayOfMonth;
-                Intent toy = new Intent(MainActivity.this, GuidancePopUp.class);
-                startActivity(toy);
-            }
-        });
+
     }
 
 
@@ -109,22 +101,20 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Intent go = new Intent(MainActivity.this, newReel.class);
+        if (id == R.id.nav_mygroup) {
+            Intent go = new Intent(MainActivity.this, MyGroups.class);
             startActivity(go);
         }
-        else if (id == R.id.nav_gallery) {
+        else if (id == R.id.nav_group||id == R.id.nav_settings||id == R.id.nav_logout) {
 
         }
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-    public static int getMonth(){
-        return Month;
-    }
-    public static int getDay(){
-        return Day;
+
     }
 }

@@ -25,7 +25,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class GuidancePopUp extends AppCompatActivity {
+public class Groups extends AppCompatActivity {
     ImageButton but;
     SignInButton sign_in;
     private GoogleApiClient mGoogleApiClient;
@@ -38,7 +38,7 @@ public class GuidancePopUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guidance_pop_up);
+        setContentView(R.layout.activity_groups);
 
         setTitle("");
 
@@ -46,7 +46,7 @@ public class GuidancePopUp extends AppCompatActivity {
         but = (ImageButton)findViewById(R.id.button3);
         but.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                Intent back = new Intent(GuidancePopUp.this, MainActivity.class);
+                Intent back = new Intent(Groups.this, MainActivity.class);
                 startActivity(back);
             }
         });
@@ -55,7 +55,7 @@ public class GuidancePopUp extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null){
-                    startActivity(new Intent(GuidancePopUp.this, Booking.class));
+                    startActivity(new Intent(Groups.this, Booking.class));
 
                 }
             }
@@ -68,7 +68,7 @@ public class GuidancePopUp extends AppCompatActivity {
         mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext())
                 .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener(){
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult){
-                        Toast.makeText(GuidancePopUp.this, "You have an Error", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Groups.this, "You have an Error", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
@@ -109,7 +109,7 @@ public class GuidancePopUp extends AppCompatActivity {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             } else {
-                Toast.makeText(GuidancePopUp.this, "FAIL", Toast.LENGTH_LONG).show();
+                Toast.makeText(Groups.this, "FAIL", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -128,7 +128,7 @@ public class GuidancePopUp extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(GuidancePopUp.this, "Authentication failed.",
+                            Toast.makeText(Groups.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
 

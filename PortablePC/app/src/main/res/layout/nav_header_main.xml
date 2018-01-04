@@ -18,12 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_weight="0.79"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logonect" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Follow up: @ivanchow889" />
 
 </LinearLayout>

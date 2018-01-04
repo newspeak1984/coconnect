@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">Portable PC</string>
+    <string name="app_name">CoConnect</string>
+
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="hi">hi</string>
+=======
+    <string name="app_label">Search</string>
+    <string name="search_hint">Search Me</string>
+>>>>>>> ogorigin/master
 </resources>

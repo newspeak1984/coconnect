@@ -24,7 +24,7 @@ public class StoryPage extends AppCompatActivity {
         String articleTitle = story.getTitle();
         title.setText(articleTitle);
         image.setImageBitmap(story.getTitleImage());
-        byline.setText(story.getAuthor());
+        //byline.setText(story.getAuthor());
         article.setText(story.getArticle());
 
 
