@@ -6,14 +6,12 @@ public class NewsStory{
     private String title;
     private Bitmap titleImage;
     private String article;
-    private String author;
     private String category;
 
-    public NewsStory(String title, Bitmap titleImage, String article, String author, String category) {
+    public NewsStory(String title, Bitmap titleImage, String article, String category) {
         this.title = title;
         this.titleImage = titleImage;
         this.article = article;
-        this.author = author;
         this.category = category;
     }
 
@@ -36,10 +34,6 @@ public class NewsStory{
 
     public String getArticle() {
         return article;
-    }
-
-    public String getAuthor() {
-        return author;
     }
 
     public String getCategory() {

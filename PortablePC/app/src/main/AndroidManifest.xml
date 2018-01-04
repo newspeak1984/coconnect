@@ -24,6 +24,7 @@
         <activity android:name=".Submit" />
         <activity android:name=".MyGroups" ></activity>
         <activity android:name=".StoryPage"></activity>
+        <activity android:name=".Polling"></activity>
     </application>
 
 </manifest>
