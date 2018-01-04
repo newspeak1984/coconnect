@@ -13,8 +13,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -31,10 +33,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
 
