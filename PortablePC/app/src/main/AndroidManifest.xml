@@ -24,7 +24,11 @@
         <activity android:name=".Submit" />
         <activity android:name=".MyGroups" ></activity>
         <activity android:name=".StoryPage"></activity>
+<<<<<<< HEAD
+        <activity android:name=".Comments" ></activity>
+=======
         <activity android:name=".Polling"></activity>
+>>>>>>> ogorigin/master
     </application>
 
 </manifest>
