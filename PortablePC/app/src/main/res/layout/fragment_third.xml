@@ -8,21 +8,20 @@
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add"
-        android:layout_marginStart="59dp"
-        android:layout_below="@+id/category"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp" />
+        android:layout_marginBottom="86dp"
+        android:text="add" />
 
     <Button
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:text="delete"
         android:layout_alignBaseline="@+id/add"
         android:layout_alignBottom="@+id/add"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:text="delete" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -48,12 +47,6 @@
         android:layout_marginTop="12dp"
         android:id="@+id/textInputLayout6">
 
-        <EditText
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="author"
-            android:inputType="text" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -85,18 +78,30 @@
         android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textInputLayout2"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="21dp"
         android:hint="category" />
 
     <Button
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/delete"
-        android:layout_marginTop="50dp"
-        android:layout_toEndOf="@+id/add"
+        android:layout_alignBaseline="@+id/delete"
+        android:layout_alignBottom="@+id/delete"
+        android:layout_centerHorizontal="true"
         android:onClick="onGallery"
         android:text="Upload" />
+
+    <Button
+        android:id="@+id/Poll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/upload"
+        android:layout_below="@+id/upload"
+        android:layout_marginTop="18dp"
+        android:text="Poll" />
+
+
 
 </RelativeLayout>

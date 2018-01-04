@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,11 +38,10 @@ public class ThirdFragment extends Fragment {
         //author = (EditText) v.findViewById(R.id.author);
         article = (EditText) v.findViewById(R.id.article);
         category = (EditText) v.findViewById(R.id.category);
-        uploadImage = (ImageView) v.findViewById(R.id.upload);
-
         Button upload = (Button) v.findViewById(R.id.upload);
         Button add = (Button) v.findViewById(R.id.add);
         Button delete = (Button) v.findViewById(R.id.delete);
+        Button poll = (Button) v.findViewById(R.id.Poll);
 
        // if(!hasCamera())
          //   upload.setEnabled(false);
@@ -73,6 +73,16 @@ public class ThirdFragment extends Fragment {
                 }
         );
 
+        poll.setOnClickListener(
+               new View.OnClickListener(){
+                   @Override
+                   public void onClick(View v){
+                       Intent Ppage = new Intent(getActivity(), Polling.class);
+                      getActivity().startActivity(Ppage);
+                   }
+               }
+        );
+
         return v;
     }
 
@@ -98,12 +108,14 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_LOAD_IMAGE && resultCode == RESULT_OK && data !=null){
+        if (requestCode == REQUEST_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
             //Get the photo
-            Uri selectedImage = data.getData();
-                uploadImage.setImageURI(selectedImage);
+            Bundle upload = data.getExtras();
+            titleImage = (Bitmap) upload.get("data");
 
         }
     }
+
+
 
 }
