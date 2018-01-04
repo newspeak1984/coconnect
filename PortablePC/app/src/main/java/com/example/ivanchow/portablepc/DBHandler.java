@@ -21,7 +21,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String TABLE_STORYBOARD = "storyboard";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TITLE = "title";
-    public static final String COLUMN_AUTHOR = "author";
+    //public static final String COLUMN_AUTHOR = "author";
     public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_ARTICLE = "article";
     public static final String COLUMN_CATEGORY = "category";
@@ -35,7 +35,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         String query = "CREATE TABLE " + TABLE_STORYBOARD + "( " +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_TITLE + " TEXT, " + COLUMN_AUTHOR +" TEXT, " +
+                //COLUMN_TITLE + " TEXT, " + COLUMN_AUTHOR +" TEXT, " +
                 COLUMN_IMAGE + " BLOB, " + COLUMN_ARTICLE + " TEXT, "+ COLUMN_CATEGORY +" TEXT );";
         db.execSQL(query);
 
@@ -56,7 +56,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void addNewsStory(NewsStory story){
         ContentValues values = new ContentValues();
         values.put(COLUMN_TITLE, story.getTitle());
-        values.put(COLUMN_AUTHOR, story.getAuthor());
+        //values.put(COLUMN_AUTHOR, story.getAuthor());
         values.put(COLUMN_IMAGE, bitmapUtil.getBytes(story.getTitleImage()));
         values.put(COLUMN_ARTICLE, story.getArticle());
         values.put(COLUMN_CATEGORY, story.getCategory());
@@ -85,7 +85,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         while(!recordSet.isAfterLast()){
             {
-                list.add(new NewsStory(recordSet.getString(recordSet.getColumnIndex("title")), bitmapUtil.getImage(recordSet.getBlob(recordSet.getColumnIndex("image"))),recordSet.getString(recordSet.getColumnIndex("article")),recordSet.getString(recordSet.getColumnIndex("author")),recordSet.getString(recordSet.getColumnIndex("category"))));
+                list.add(new NewsStory(recordSet.getString(recordSet.getColumnIndex("title")), bitmapUtil.getImage(recordSet.getBlob(recordSet.getColumnIndex("image"))),recordSet.getString(recordSet.getColumnIndex("article")),recordSet.getString(recordSet.getColumnIndex("category"))));
             }
             recordSet.moveToNext();
         }
@@ -106,7 +106,7 @@ public class DBHandler extends SQLiteOpenHelper {
         while (!recordSet.isAfterLast()) {
             // null could happen if we used our empty constructor
             {
-                news = new NewsStory(recordSet.getString(recordSet.getColumnIndex("title")), bitmapUtil.getImage(recordSet.getBlob(recordSet.getColumnIndex("image"))),recordSet.getString(recordSet.getColumnIndex("article")),recordSet.getString(recordSet.getColumnIndex("author")),recordSet.getString(recordSet.getColumnIndex("category")));
+                news = new NewsStory(recordSet.getString(recordSet.getColumnIndex("title")), bitmapUtil.getImage(recordSet.getBlob(recordSet.getColumnIndex("image"))),recordSet.getString(recordSet.getColumnIndex("article")),recordSet.getString(recordSet.getColumnIndex("category")));
                 db.close();
                 return news;
             }
