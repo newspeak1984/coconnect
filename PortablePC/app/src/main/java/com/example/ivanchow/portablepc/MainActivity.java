@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,6 +40,9 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    Button access;
+    Button login;
+    ImageButton addPoll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,32 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        access = (Button)findViewById(R.id.accessvote);
+        access.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent gotoVote = new Intent(MainActivity.this, VotingPollPage.class);
+                startActivity(gotoVote);
+            }
+        });
+
+        addPoll = (ImageButton)findViewById(R.id.NewPoll);
+        addPoll.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent createPoll = new Intent(MainActivity.this, CreatePollPage.class);
+                startActivity(createPoll);
+            }
+        });
+
+        login = (Button)findViewById(R.id.logout);
+        login.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                FirebaseAuth.getInstance().signOut();
+                Intent goBack = new Intent(MainActivity.this, Groups.class);
+                startActivity(goBack);
+            }
+        });
+
 
 
     }
@@ -108,10 +138,6 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_group||id == R.id.nav_settings||id == R.id.nav_logout) {
 
         }
-
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
