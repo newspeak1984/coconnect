@@ -27,6 +27,7 @@
         <activity android:name=".VotingPollPage" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".CreatePollPage"></activity>
+>>>>>>> origin/master
     </application>
 
 </manifest>

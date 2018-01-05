@@ -28,9 +28,22 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:src="@drawable/logonect" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="1"
+                android:background="@drawable/search"
+                android:text="" />
         </android.support.v7.widget.Toolbar>
 
-    </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
