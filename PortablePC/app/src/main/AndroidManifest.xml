@@ -25,6 +25,10 @@
         <activity android:name=".MyGroups" ></activity>
         <activity android:name=".StoryPage"></activity>
         <activity android:name=".Polling"></activity>
+        <activity android:name=".AddGroup"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>
