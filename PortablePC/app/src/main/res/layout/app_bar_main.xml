@@ -7,9 +7,10 @@
     tools:context="com.example.ivanchow.portablepc.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -44,8 +45,63 @@
         </android.support.v7.widget.Toolbar>
 
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </android.support.design.widget.AppBarLayout>
+        <Button
+            android:id="@+id/Search"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/search"
+            android:text="" />
+
+        <ImageButton
+            android:id="@+id/NewPoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="31dp"
+            android:layout_marginEnd="21dp"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/NewPoll"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="95dp"
+            android:text="LogOut" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="100dp">
+
+            <Button
+                android:id="@+id/accessvote"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Access Vote" />
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </android.support.design.widget.CoordinatorLayout>

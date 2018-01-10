@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="match_parent"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.russellparco.tabs.StoryPage">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
 
         <ImageView
             android:id="@+id/mainImage"
             android:layout_width="match_parent"
             android:layout_height="225dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
-            android:layout_alignParentStart="true" />
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
         <TextView
             android:id="@+id/byline"
@@ -31,14 +33,14 @@
             android:id="@+id/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/mainImage"
             android:padding="15dp"
             android:text="Where Does all of the Money Go"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@android:color/black"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/mainImage"
-            android:layout_alignParentStart="true" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/article"
@@ -47,13 +49,28 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/byline"
             android:padding="15dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum velit eros, tempor sit amet mi id, convallis bibendum ligula. Donec ac iaculis neque. Donec dui nisi, sollicitudin a condimentum at, efficitur ac lectus. Etiam tortor ipsum, aliquam eget maximus vitae, aliquet sit amet urna. Suspendisse dapibus, massa in gravida euismod, nisl urna porta orci, sed eleifend libero velit sed mi. Morbi tincidunt augue in dolor ullamcorper, blandit eleifend nunc ultrices. Nunc sed faucibus mi.  Curabitur sed mi ut velit scelerisque iaculis. Suspendisse rhoncus ultricies faucibus. Curabitur sit amet mi eget risus ultrices fermentum sit amet vel augue. Quisque consectetur sem sit amet consectetur porta. Suspendisse tincidunt pharetra urna, sollicitudin dictum odio lacinia et. Mauris ac rutrum eros, et malesuada risus. In hac habitasse platea dictumst. Praesent nunc erat, condimentum at nunc eget, vehicula finibus dolor. Morbi commodo nec purus quis suscipit. Ut luctus iaculis lacinia. Donec gravida nulla felis, a dictum neque blandit ac. Praesent volutpat fringilla libero sit amet convallis. Donec placerat scelerisque velit, ac suscipit eros facilisis et. Nulla ac nisl sit amet quam lobortis pellentesque.  In feugiat nisi condimentum tortor porttitor interdum. Nunc volutpat arcu lorem, in vehicula sem commodo ac. Aliquam cursus est nec tortor facilisis, vel vehicula diam scelerisque. Nulla sagittis metus vestibulum, ornare velit ut, pharetra magna. Sed ut ipsum pharetra, accumsan ex in, gravida tortor. Sed porttitor sem eros, in scelerisque orci ornare nec. Nunc ante eros, fermentum eu sapien sit amet, pulvinar maximus libero. Etiam placerat suscipit magna in lacinia. Suspendisse molestie dapibus tincidunt. Praesent non convallis risus. Quisque tincidunt ante ut ipsum tincidunt tincidunt in sit amet urna. Etiam maximus tempus nibh nec placerat. Pellentesque ipsum ante, laoreet sed sapien nec, faucibus finibus mi. Proin rhoncus est vitae tincidunt euismod"
+            android:text="@string/hi"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/article"
+            android:layout_toLeftOf="@+id/imageButton"
+            android:ems="10"
+            android:hint="Post Comment..."
+            android:inputType="textPersonName"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/commentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
 
 
-
-
-    </RelativeLayout>
 </ScrollView>

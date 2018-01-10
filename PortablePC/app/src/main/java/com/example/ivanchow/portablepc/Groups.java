@@ -26,7 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Groups extends AppCompatActivity {
-    ImageButton but;
     SignInButton sign_in;
     private GoogleApiClient mGoogleApiClient;
     private static final String TAG = "SignInActivity";
@@ -43,19 +42,12 @@ public class Groups extends AppCompatActivity {
         setTitle("");
 
 
-        but = (ImageButton)findViewById(R.id.button3);
-        but.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent back = new Intent(Groups.this, MainActivity.class);
-                startActivity(back);
-            }
-        });
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null){
-                    startActivity(new Intent(Groups.this, Booking.class));
+                    startActivity(new Intent(Groups.this, MainActivity.class));
 
                 }
             }
