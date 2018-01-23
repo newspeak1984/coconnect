@@ -17,11 +17,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
-<<<<<<< HEAD
+
 import android.widget.EditText;
-=======
+
 import android.widget.ImageButton;
->>>>>>> ogorigin/master
+
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -70,8 +70,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-<<<<<<< HEAD
-=======
 
         access = (Button)findViewById(R.id.accessvote);
         access.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +98,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
->>>>>>> ogorigin/master
+
     }
 
 
@@ -151,14 +149,7 @@ public class MainActivity extends AppCompatActivity
             Intent change = new Intent(MainActivity.this, AddGroup.class);
             startActivity(change);
         }
-<<<<<<< HEAD
 
-
-
-
-
-=======
->>>>>>> ogorigin/master
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

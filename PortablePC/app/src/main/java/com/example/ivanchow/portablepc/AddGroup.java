@@ -9,11 +9,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 public class AddGroup extends AppCompatActivity{
 
@@ -25,6 +28,8 @@ public class AddGroup extends AppCompatActivity{
 
     ImageView upload;
     Button uploadImage;
+    LinearLayout group_list;
+    Uri pic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +37,17 @@ public class AddGroup extends AppCompatActivity{
         setContentView(R.layout.activity_addgroup);
 
         databaseGroups = FirebaseDatabase.getInstance().getReference("groups");
-
         editTextName = (EditText) findViewById(R.id.editTextName);
         buttonAdd = (Button) findViewById(R.id.buttonAddGroup);
-
+        group_list = (LinearLayout) findViewById(R.id.temp);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 addGroup();
+                Intent intent = new Intent(AddGroup.this, GroupList.class);
+                createGroupButton(pic);
+                //startActivity(intent);
             }
         });
 
@@ -63,6 +70,7 @@ public class AddGroup extends AppCompatActivity{
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
             Uri selectedImage = data.getData();
+            pic = data.getData();
             upload.setImageURI(selectedImage);
         }
     }
@@ -77,5 +85,13 @@ public class AddGroup extends AppCompatActivity{
         }else{
             Toast.makeText(this, "Enter a group name", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void createGroupButton(Uri uri){
+        ImageButton but = new ImageButton(getApplicationContext());
+        but.setMaxHeight(500);
+        but.setMaxWidth(300);
+        but.setImageURI(uri);
+        group_list.addView(but);
     }
 }
