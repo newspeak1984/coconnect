@@ -24,10 +24,14 @@
         <activity android:name=".MyGroups" />
         <activity android:name=".StoryPage" />
         <activity android:name=".Polling" />
+        <activity android:name=".AddGroup" />
         <activity android:name=".VotingPollPage" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".CreatePollPage"></activity>
->>>>>>> origin/master
+        <activity android:name=".CreatePollPage"/>
+        <activity android:name=".GroupList"/>
+
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 </manifest>

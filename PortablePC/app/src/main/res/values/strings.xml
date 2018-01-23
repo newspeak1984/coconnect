@@ -10,4 +10,7 @@
     <string name="hi">hi</string>
     <string name="app_label">Search</string>
     <string name="search_hint">Search Me</string>
+    <string name="group_name">Group Name</string>
+    <string name="create_group">Create Group</string>
+    <string name="add_picture">Add Picture</string>
 </resources>

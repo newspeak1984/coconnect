@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +17,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+
+import android.widget.EditText;
+
 import android.widget.ImageButton;
+
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -33,6 +38,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,6 +53,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -87,6 +95,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(goBack);
             }
         });
+
 
 
 
@@ -135,9 +144,12 @@ public class MainActivity extends AppCompatActivity
             Intent go = new Intent(MainActivity.this, MyGroups.class);
             startActivity(go);
         }
-        else if (id == R.id.nav_group||id == R.id.nav_settings||id == R.id.nav_logout) {
 
+        else if (id == R.id.nav_addgroup) {
+            Intent change = new Intent(MainActivity.this, AddGroup.class);
+            startActivity(change);
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
